@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150527203706) do
+ActiveRecord::Schema.define(version: 20150527204346) do
+
+  create_table "locations", force: true do |t|
+    t.float "latitude"
+    t.float "longitude"
+  end
 
   create_table "tickets", force: true do |t|
     t.string "address"
