@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150528174737) do
+ActiveRecord::Schema.define(version: 20150528183420) do
 
   create_table "locations", force: true do |t|
     t.float   "latitude"
     t.float   "longitude"
     t.string  "address"
-    t.integer "count"
+    t.integer "tickets_count"
   end
 
   create_table "tickets", force: true do |t|
