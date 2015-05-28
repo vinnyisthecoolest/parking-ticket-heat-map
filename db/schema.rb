@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150528170910) do
+ActiveRecord::Schema.define(version: 20150528174737) do
 
   create_table "locations", force: true do |t|
     t.float   "latitude"
@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 20150528170910) do
     t.integer "code"
     t.string  "category"
     t.integer "cost"
-    t.time    "time"
     t.string  "plates"
+    t.string  "time"
   end
 
 end
