@@ -10,10 +10,10 @@ gem 'sinatra-activerecord'
 
 gem 'puma'
 gem 'tux'
+gem 'geocoder'
 
 group :development, :test do
   gem 'pry'
   gem 'shotgun'
   gem 'sqlite3'
-  gem 'geocoder'
 end
