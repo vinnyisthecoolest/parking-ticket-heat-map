@@ -1,31 +1,25 @@
 require 'csv'
-require './app/models/tickets.rb'
+require './app/models/ticket.rb'
+require './app/models/location.rb'
 
 class TicketImporter
 
-  def initialize(filename = File.absolute_path('db/data/test.csv'))
+  def initialize(filename = File.absolute_path('db/data/test_2k.csv'))
     @filename = filename
   end
 
   def import
-    field_names = ['address']
-    puts "Importing tickets from '#{@filename}'"
-    failure_count = 0
+    field_names = ['date', 'code', 'category', 'cost', 'time', 'plates']
+    puts "Importing students from '#{@filename}'"
     Ticket.transaction do
-      CSV.read(@filename).each do |line|
-        begin
-          Ticket.create!(address: line[7])
-          print '.'
-        rescue ActiveRecord::UnknownAttributeError
-          failure_count += 1
-          print '!'
-        end
+      CSV.read(@filename).each do | line |
+        location = Location.find_or_create_by!(address: line[7])
+        data = [line[1], line[2], line[3], line[4], line[5], line[-1]]
+        attribute_hash = Hash[field_names.zip(data)]
+        location.tickets.create!(attribute_hash)
       end
     end
-    failures = failure_count > 0 ? "(failed to create #{failure_count} student records)" : ''
-    puts "\nDONE #{failures}\n\n"
+    puts "\nDONE\n\n"
   end
 
 end
-
-
