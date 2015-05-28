@@ -10,16 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150527205447) do
+ActiveRecord::Schema.define(version: 20150528170910) do
 
   create_table "locations", force: true do |t|
-    t.float "latitude"
-    t.float "longitude"
+    t.float   "latitude"
+    t.float   "longitude"
+    t.string  "address"
+    t.integer "count"
   end
 
   create_table "tickets", force: true do |t|
-    t.string  "address"
     t.integer "location_id"
+    t.date    "date"
+    t.integer "code"
+    t.string  "category"
+    t.integer "cost"
+    t.time    "time"
+    t.string  "plates"
   end
 
 end
