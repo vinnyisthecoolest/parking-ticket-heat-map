@@ -1,5 +1,5 @@
 require 'csv'
-require './app/models/tickets.rb'
+require './app/models/ticket.rb'
 
 class TicketImporter
 
@@ -8,7 +8,6 @@ class TicketImporter
   end
 
   def import
-    field_names = ['address']
     puts "Importing tickets from '#{@filename}'"
     failure_count = 0
     Ticket.transaction do
