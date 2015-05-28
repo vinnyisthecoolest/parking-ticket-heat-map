@@ -2,6 +2,7 @@ require 'rake'
 require "sinatra/activerecord/rake"
 require ::File.expand_path('../config/environment', __FILE__)
 require './lib/ticket_importer'
+require './lib/geocode_all'
 
 Rake::Task["db:create"].clear
 Rake::Task["db:drop"].clear
@@ -25,4 +26,9 @@ end
 desc 'Populate the database with ticket data'
 task "db:populate" do
   TicketImporter.new.import
+end
+
+desc 'Add geocode data to location table'
+task 'geocode_all' do
+  GeocodeAll.new.run
 end

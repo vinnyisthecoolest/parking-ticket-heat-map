@@ -6,7 +6,7 @@ class Location < ActiveRecord::Base
   geocoded_by :full_street_address
 
   def full_street_address
-    address.join(', Toronto, ON, CA')
+    address.concat(', Toronto, ON, CA')
   end
 
 end
