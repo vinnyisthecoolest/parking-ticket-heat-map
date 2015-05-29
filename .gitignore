@@ -6,4 +6,4 @@
 /db/*.sqlite3-journal
 .DS_Store
 public/assets
-/db/data/*.csv
+/db/data/*
