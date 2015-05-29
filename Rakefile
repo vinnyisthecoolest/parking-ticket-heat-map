@@ -25,10 +25,12 @@ end
 
 desc 'Populate the database with ticket data'
 task "db:populate" do
+  ActiveRecord::Base.logger.level = 2
   TicketImporter.new.import
 end
 
 desc 'Add geocode data to location table'
 task 'geocode_all' do
+  ActiveRecord::Base.logger.level = 2
   GeocodeAll.new.run
 end
