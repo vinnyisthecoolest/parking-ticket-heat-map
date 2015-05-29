@@ -10,7 +10,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization"></script>
 
     <script>
-      var ticketData = [new google.maps.LatLng(<% Location.find(101).latitude %>, <% Location.find(101).longitude %>)]
+      var ticketData = [<%= Location.all.map {|x| "new google.maps.LatLng(#{x.latitude}, #{x.longitude})"}.join(",") %>]
     </script>
 
     <script src="/javascript/google_maps.js"></script>
