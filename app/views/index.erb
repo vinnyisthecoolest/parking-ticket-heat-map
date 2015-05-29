@@ -8,6 +8,11 @@
     <meta charset="utf-8">
 
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization"></script>
+
+    <script>
+      var ticketData = [new google.maps.LatLng(<% Location.find(101).latitude %>, <% Location.find(101).longitude %>)]
+    </script>
+
     <script src="/javascript/google_maps.js"></script>
   </head>
   <body>
