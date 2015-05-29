@@ -3,7 +3,7 @@ var map, pointarray, heatmap;
 
 function initialize() {
   var mapOptions = {
-    zoom: 13,
+    zoom: 11,
     center: new google.maps.LatLng(43.6863545, -79.2899805),
     mapTypeId: google.maps.MapTypeId.SATELLITE
   };
@@ -17,6 +17,11 @@ function initialize() {
   });
 
   heatmap.setMap(map);
+  heatmap.setOptions({
+    maxIntensity: 5,
+    radius: 5,
+    opacity: .5
+  });
 }
 
 function toggleHeatmap() {
@@ -52,3 +57,5 @@ function changeOpacity() {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
+
