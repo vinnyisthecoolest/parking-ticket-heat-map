@@ -4,7 +4,7 @@ require './app/models/location.rb'
 
 class TicketImporter
 
-  def initialize(filename = File.absolute_path('db/data/test_2k.csv'))
+  def initialize(filename = File.absolute_path('db/data/test_10.csv'))
     @filename = filename
   end
 
