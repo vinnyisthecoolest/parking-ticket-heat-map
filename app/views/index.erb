@@ -8,9 +8,20 @@
     <meta charset="utf-8">
 
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization"></script>
+
+    <script>
+      var ticketData = [<%= Location.all.map {|x| "{location: new google.maps.LatLng(#{x.latitude}, #{x.longitude}), weight: #{x.tickets_count}}"}.join(",") %>]
+    </script>
+
     <script src="/javascript/google_maps.js"></script>
   </head>
   <body>
+    <div id="panel">
+      <button onclick="toggleHeatmap()">Toggle Heatmap</button>
+      <button onclick="changeGradient()">Change gradient</button>
+      <button onclick="changeRadius()">Change radius</button>
+      <button onclick="changeOpacity()">Change opacity</button>
+    </div>
     <div id="map-canvas"></div>
   </body>
 </html>
