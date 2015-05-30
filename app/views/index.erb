@@ -11,6 +11,7 @@
 
     <script>
       var ticketData = [<%= Location.all.map {|x| "{location: new google.maps.LatLng(#{x.latitude}, #{x.longitude}), weight: #{x.tickets_count}}"}.join(",") %>]
+      var searchSettings = {maxIntensity: 5, radius: 5, opacity: .5}
     </script>
 
     <script src="/javascript/google_maps.js"></script>
