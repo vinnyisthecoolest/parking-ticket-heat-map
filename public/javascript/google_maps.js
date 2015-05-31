@@ -17,7 +17,7 @@ function initialize() {
   });
 
   heatmap.setMap(map);
-  heatmap.setOptions(searchSettings);
+  heatmap.setOptions(options);
 }
 
 function toggleHeatmap() {
