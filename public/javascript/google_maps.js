@@ -17,11 +17,7 @@ function initialize() {
   });
 
   heatmap.setMap(map);
-  heatmap.setOptions({
-    maxIntensity: 5,
-    radius: 5,
-    opacity: .5
-  });
+  heatmap.setOptions(searchSettings);
 }
 
 function toggleHeatmap() {

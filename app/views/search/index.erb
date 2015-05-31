@@ -1,8 +1,19 @@
-<h1>Home Page</h1>
+<h1> Search page, hopefully </h1>
+<form method="post" action="/search">
+  <div>
+    <label>Search:</label>
+    <input type="text" name="street">
+  </div>
+  <div>
+    <input type="submit" value="Submit">
+  </div>
+</form>
+
+<h1><%= @array.first.latitude if @array %></h1>
+
 
 <html>
   <head>
-
     <title>Simple Map</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -10,8 +21,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization"></script>
 
     <script>
-      var ticketData = [<%= Location.all.map {|x| "{location: new google.maps.LatLng(#{x.latitude}, #{x.longitude}), weight: #{x.tickets_count}}"}.join(",") %>]
-      var searchSettings = {maxIntensity: 5, radius: 5, opacity: .5}
+      var ticketData = [<%= @array.map {|x| "{location: new google.maps.LatLng(#{x.latitude}, #{x.longitude}), weight: #{x.tickets_count}}"}.join(",") if @array %>]
+      var searchSettings = {maxIntensity: 5, radius: 10, opacity: .5}
     </script>
 
     <script src="/javascript/google_maps.js"></script>
