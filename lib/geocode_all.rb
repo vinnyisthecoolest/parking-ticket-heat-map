@@ -4,7 +4,7 @@ class GeocodeAll
 
   def run
     Geocoder.configure(
-      :lookup => :yandex
+      # :lookup => :yandex
       # :lookup => :bing,
       # :api_key => "...",
       # geocoding service request timeout, in seconds (default 3):
