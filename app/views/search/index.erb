@@ -1,27 +1,28 @@
-<h1> Search page, hopefully </h1>
-<form method="post" action="/search">
-  <div>
-    <label>Search:</label>
-    <input type="text" name="street">
-  </div>
-  <div>
-    <input type="submit" value="Submit">
-  </div>
-</form>
+<div class="row">
+  <div class="col-lg-4">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+      <form method="post" action="/search">
+        <input type="text" class="form-control" placeholder="Search for street name..." name="street">
+      </form>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
 
 <html>
   <head>
-    <title>Simple Map</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-
+    <title>TPT - Search</title>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization"></script>
     <script>
       var ticketData = [<%= @array.map {|x| "{location: new google.maps.LatLng(#{x.latitude}, #{x.longitude}), weight: #{x.tickets_count}}"}.join(",") if @array %>]
       var options = {maxIntensity: 5, radius: 10, opacity: .5}
     </script>
     <script src="/javascript/google_maps.js"></script>
-    
+    <style>#map-canvas { height: 94% }</style>
   </head>
   <body>
     <div id="map-canvas"></div>

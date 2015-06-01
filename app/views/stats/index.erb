@@ -1,26 +1,28 @@
+<head>
+  <title>TPT - Stats</title>
+</head>
+
 <body>
 
-<div>
-<h1>Found some stats yo!</h1>
-<h2>For 500,000 tickets 2014</h2>
+<div class="panel panel-primary">
+  <div class="panel-heading">2014</div>
+  <div class="panel-body">454,925 tickets</div>
+</div>
+<div class="panel panel-info">
+  <div class="panel-heading">Most expensive ticket!</div>
+  <div class="panel-body">$450 (2132 tickets)</div>
+</div>
+<div class="panel panel-info">
+  <div class="panel-heading">Total revenue from all tickets</div>
+  <div class="panel-body">$19,661,335</div>
+</div>
 
-<p>Most expensive ticket!</p>
-<p>450</p>
-<p>and there were 2132</p>
 <!-- <% expensive = Ticket.order(cost: :desc).limit(1).first.cost %> -->
 <!-- <p><%= expensive %></p> -->
 <!-- <p>and there were <%= Ticket.where(cost: expensive).count %></p> -->
 
-<p>Total number of tickets</p>
-<p>454925</p>
 <!-- <%= Ticket.count %> -->
 
-<p>Total revenue from all tickets</p>
-<p>19661335</p>
 <!-- <%= Ticket.sum(:cost) %> -->
-</div>
 
 </body>
-
-
-

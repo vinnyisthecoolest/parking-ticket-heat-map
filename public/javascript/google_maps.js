@@ -4,7 +4,8 @@ function initialize() {
   var mapOptions = {
     zoom: 11,
     center: new google.maps.LatLng(43.6863545, -79.2899805),
-    mapTypeId: google.maps.MapTypeId.SATELLITE
+    streetViewControl: false,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
