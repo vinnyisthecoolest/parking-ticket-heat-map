@@ -1,5 +1,5 @@
 html, body, #map-canvas {
-  height: 100%;
+  height: 97%;
   margin: 0px;
   padding: 0px
 };
@@ -13,4 +13,18 @@ html, body, #map-canvas {
   background-color: #fff;
   padding: 5px;
   border: 1px solid #999;
+}
+
+.input-group {
+  margin-bottom: 3px
+}
+
+.navbar {
+  margin-bottom: 3px !important
+}
+
+.panel {
+  font-size: 2.5em;
+  margin: 0 auto;
+  max-width: 600px
 }

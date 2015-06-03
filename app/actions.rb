@@ -13,3 +13,6 @@ post '/search' do
   erb :'/search/index'
 end
 
+get '/stats' do
+  erb :'/stats/index'
+end
