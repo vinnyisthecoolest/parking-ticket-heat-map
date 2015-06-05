@@ -4,12 +4,10 @@ get '/' do
 end
 
 get '/search' do
-  erb :'/search/index'
-end
-
-post '/search' do
-  search_term = "%#{params[:street].upcase}%"
-  @array = Location.where("address LIKE ?", search_term)
+  if params[:street]
+    search_term = "%#{params[:street].upcase}%"
+    @array = Location.where("address LIKE ?", search_term)
+  end
   erb :'/search/index'
 end
 
