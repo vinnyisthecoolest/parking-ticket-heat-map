@@ -8,7 +8,7 @@ get '/search' do
 end
 
 post '/search' do
-  search_term = "%#{params[:street]}%"
+  search_term = "%#{params[:street].upcase}%"
   @array = Location.where("address LIKE ?", search_term)
   erb :'/search/index'
 end
